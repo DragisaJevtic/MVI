@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/LoginFragment">
+
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="com.example.supertestapplication.view.fragments.LoginFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_LoginFragment_to_SearchFragment"
+            app:destination="@id/SearchFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/LoginFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/SearchFragment"
+        android:name="com.example.supertestapplication.view.fragments.SearchGitUserFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_search_git_user">
+        <action
+            android:id="@+id/action_SearchFragment_to_UserDetailsFragment"
+            app:destination="@id/UserDetailsFragment">
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/UserDetailsFragment"
+        android:name="com.example.supertestapplication.view.fragments.UserDetailsFragment"
+        android:label="@string/user_details_label"
+        tools:layout="@layout/fragment_user_detailes">
+        <action
+            android:id="@+id/action_UserDetailsFragment_to_SearchFragment"
+            app:destination="@id/SearchFragment" />
+    </fragment>
+</navigation>
